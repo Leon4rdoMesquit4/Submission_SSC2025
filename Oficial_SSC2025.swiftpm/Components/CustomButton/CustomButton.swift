@@ -13,7 +13,7 @@ struct CustomButton: View {
     var buttonAction: (() -> Void)?
     
     var body: some View {
-        HStack {
+        HStack(spacing: SpacingContants.medium) {
             if let text = text {
                 VerticalWordStack(text: text)
             }
@@ -22,6 +22,7 @@ struct CustomButton: View {
                 buttonAction?()
             } label: {
                 Image(state.imageName)
+                    .renderingMode(.template)
             }
         }
     }

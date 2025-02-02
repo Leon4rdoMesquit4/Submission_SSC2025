@@ -4,7 +4,14 @@ struct Chapter1View: View {
     var body: some View {
         ZStack {
             gradientBackground
-            CustomButton(state: .play, text: "Start Journey")
+            HStack(alignment: .bottom) {
+                Spacer()
+                VStack {
+                    Spacer()
+                    CustomButton(state: .play, text: "Start Journey")
+                        .foregroundStyle(ColorsConstants.chpt1white).padding(EdgeInsets(top: 0, leading: 0, bottom: SpacingContants.ultraLarge, trailing: SpacingContants.ultraLarge))
+                }
+            }
         }.ignoresSafeArea()
     }
 }
