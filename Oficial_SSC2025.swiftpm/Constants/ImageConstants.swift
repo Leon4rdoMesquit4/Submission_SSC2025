@@ -7,8 +7,9 @@
 
 enum ImageConstants {
     //Button Images
-    static let nextButton = "next_button"
-    static let restartButton = "restart_button"
+    static let playbutton = "PlayButton"
+    static let nextButton = "NextButton"
+    static let restartButton = "RestartButton"
     
     //
 }

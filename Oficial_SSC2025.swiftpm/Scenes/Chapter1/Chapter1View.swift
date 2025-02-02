@@ -1,15 +1,15 @@
 import SwiftUI
 
-struct ContentView: View {
+struct Chapter1View: View {
     var body: some View {
         ZStack {
             gradientBackground
+            CustomButton(state: .play, text: "Start Journey")
         }.ignoresSafeArea()
     }
-    
 }
 
-extension ContentView {
+extension Chapter1View {
     var gradientBackground: some View {
         LinearGradient(stops: [
             .init(
