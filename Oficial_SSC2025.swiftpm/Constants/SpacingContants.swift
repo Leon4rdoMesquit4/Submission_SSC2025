@@ -13,4 +13,5 @@ enum SpacingContants {
     static let large: CGFloat = 24
     static let extraLarge: CGFloat = 36
     static let ultraLarge: CGFloat = 54
+    static let extraUltraLarge: CGFloat = 80
 }

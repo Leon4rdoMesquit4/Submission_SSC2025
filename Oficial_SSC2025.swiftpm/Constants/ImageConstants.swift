@@ -11,5 +11,10 @@ enum ImageConstants {
     static let nextButton = "NextButton"
     static let restartButton = "RestartButton"
     
-    //
+    //Chapter 1 images
+    static let fujiColored = "Fuji-colored"
+    static let fujiPainted = "Fuji-painted"
+    
+    static let gameName = "GameName-white"
+    static let gameNamePainted = "GameName-painted"
 }
