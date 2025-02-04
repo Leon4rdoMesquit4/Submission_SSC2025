@@ -13,16 +13,22 @@ struct CustomButton: View {
     var buttonAction: (() -> Void)?
     
     var body: some View {
-        HStack(spacing: SpacingContants.medium) {
-            if let text = text {
-                VerticalWordStack(text: text)
-            }
-            
-            Button {
-                buttonAction?()
-            } label: {
-                Image(state.imageName)
-                    .renderingMode(.template)
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                HStack(spacing: SpacingContants.medium) {
+                    if let text = text {
+                        VerticalWordStack(text: text)
+                    }
+                    
+                    Button {
+                        buttonAction?()
+                    } label: {
+                        Image(state.imageName)
+                            .renderingMode(.template)
+                    }
+                }.padding([.bottom, .trailing], SpacingContants.ultraLarge)
             }
         }
     }

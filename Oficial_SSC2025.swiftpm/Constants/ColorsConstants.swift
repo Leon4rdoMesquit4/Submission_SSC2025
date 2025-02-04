@@ -15,7 +15,8 @@ enum ColorsConstants {
     static let c4Gradiente = Color("C4Gradient")
     
     //Chapter 1
-    static let chpt1color = Color("Chpt1color")
+    static let chpt1color1 = Color("Chpt1color1")
+    static let chpt1color2 = Color("Chpt1color2")
     static let chpt1bgcolor = Color("Chpt1bgcolor")
     static let chpt1white = Color("Chpt1white")
     
