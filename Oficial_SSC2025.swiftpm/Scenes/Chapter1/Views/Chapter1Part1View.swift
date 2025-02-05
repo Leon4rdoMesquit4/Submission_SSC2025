@@ -8,32 +8,77 @@
 import SwiftUI
 
 struct Chapter1Part1View: View {
+    let action: (() -> Void)?
+    @State var hasBorder: Bool = false
+    @State var isViewPresented: Bool = false
+    
     var body: some View {
+        part1
+            .ignoresSafeArea()
+            .onAppear {
+                withAnimation(.smooth)  {
+                    isViewPresented = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.short + DurationConstants.extraShort) {
+                    withAnimation(.smooth) {
+                        hasBorder = true
+                    }
+                }
+            }
+    }
+    
+    var part1: some View {
         ZStack {
-            Chapter1PaintedBackground(hasBorder: true)
+            Chapter1PaintedBackground(hasBorder: $hasBorder)
             VStack {
                 Spacer()
-                HStack(alignment: .bottom, spacing: SpacingContants.small) {
-                    Text("Origami")
-                        .font(FontsConstants.oriTitle)
-                    Text("is an")
-                        .font(FontsConstants.subtitle2)
-                        .padding(.bottom, SpacingContants.small)
+                if isViewPresented {
+                    text
                 }
-                Text("ancient art form that emerged thousands of years ago")
-                    .font(FontsConstants.subtitle2)
-                MountFuji(isPainted: .constant(true))
-                    .padding(.bottom, -SpacingContants.maximum)
-                    .padding(.top, SpacingContants.ultraLarge)
+                mountFuji
             }
-            CustomButton(state: .play) {
-                
-            }.foregroundStyle(ColorsConstants.chpt1color2)
-                .shadow(radius: SizeConstants.shadowBlur)
-        }.ignoresSafeArea()
+            bottomButton
+        }
     }
+    
+    var text: some View {
+        VStack{
+            Spacer()
+            HStack(alignment: .bottom, spacing: SpacingContants.small) {
+                Text(origamiTitle)
+                    .font(FontsConstants.oriTitle)
+                Text(origamiSubtitle1)
+                    .font(FontsConstants.subtitle2)
+                    .padding(.bottom, SpacingContants.small)
+            }
+            Text(origamiSubtitle2)
+                .font(FontsConstants.subtitle2)
+        }
+    }
+    
+    var mountFuji: some View {
+        MountFuji(isPainted: .constant(true))
+            .padding(.bottom, isViewPresented ? -SpacingContants.maximum : .zero)
+            .padding(.top, isViewPresented ? SpacingContants.ultraLarge : .zero)
+    }
+    
+    var bottomButton: some View {
+        CustomButton(state: .play) {
+            action?()
+        }.foregroundStyle(ColorsConstants.chpt1color2)
+            .shadow(radius: SizeConstants.shadowBlur)
+    }
+    
 }
 
-#Preview {
-    Chapter1Part1View()
+extension Chapter1Part1View {
+    var origamiTitle: String {
+        "Origami"
+    }
+    var origamiSubtitle1: String {
+        "is an"
+    }
+    var origamiSubtitle2: String {
+        "ancient art form that emerged thousands of years ago"
+    }
 }

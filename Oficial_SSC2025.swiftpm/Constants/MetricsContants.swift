@@ -16,9 +16,20 @@ enum SpacingContants {
     static let ultraLarge: CGFloat = 54
     static let extraUltraLarge: CGFloat = 80
     static let maximum: CGFloat = 164
+    static let mountOffset: CGFloat = 270
 }
 
 enum SizeConstants {
     static let lineWidth: CGFloat = 4
     static let shadowBlur: CGFloat = 25
+}
+
+enum DurationConstants {
+    static let tiny: TimeInterval = 0.1
+    static let extraShort: TimeInterval = 0.25
+    static let short: TimeInterval = 0.5
+    static let medium: TimeInterval = 1
+    static let long: TimeInterval = 1.5
+    static let extraLong: TimeInterval = 2.0
+    static let huge: TimeInterval = 2.5
 }

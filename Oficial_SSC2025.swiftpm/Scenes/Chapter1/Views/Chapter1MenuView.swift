@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Chapter1MenuView: View {
     @State var isPainted: Bool = false
-    @Binding var chpt: Chpt1viewChoose
+    let action: (() -> Void)?
     
     var body: some View {
         menu
@@ -14,7 +14,7 @@ extension Chapter1MenuView {
     var menu: some View {
         ZStack {
             if isPainted {
-                Chapter1PaintedBackground()
+                Chapter1PaintedBackground(hasBorder: .constant(false))
             } else {
                 MenuGradientBackground()
             }
@@ -43,12 +43,12 @@ extension Chapter1MenuView {
     
     var bottomButton: some View {
         CustomButton(state: .play, text: buttonText) {
-            withAnimation(.smooth(duration: 2.5)) {
+            withAnimation(.smooth(duration: DurationConstants.huge)) {
                 isPainted.toggle()
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                chpt = .part1
+            DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
+                action?()
             }
         }
         .foregroundStyle(ColorsConstants.chpt1white)

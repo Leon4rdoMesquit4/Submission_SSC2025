@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Chapter1PaintedBackground: View {
-    @State var hasBorder: Bool = false
+    @Binding var hasBorder: Bool
     
     var body: some View {
         ZStack {
@@ -26,4 +26,3 @@ struct Chapter1PaintedBackground: View {
         }
     }
 }
-
