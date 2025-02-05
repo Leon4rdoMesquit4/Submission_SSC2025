@@ -38,13 +38,10 @@ extension Chapter1Part5View {
     
     var paperImage: some View {
         VStack {
-            Image(ImageConstants.paper + "\(paperNumber)")
+            Image(ImageConstants.tsuru)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .overlay(alignment: .trailing) {
-                    Image(ImageConstants.arrow)
-                        .offset(x: 10, y: 150)
-                }
+            Spacer(minLength: SpacingContants.huge + SpacingContants.large)
         }
     }
     
@@ -68,7 +65,7 @@ extension Chapter1Part5View {
 
 extension Chapter1Part5View {
     var captionText: String {
-        "You just need to fold and start!"
+        "The Tsuru is a traditional symbol in origami art"
     }
 }
 

@@ -21,6 +21,8 @@ enum ImageConstants {
     static let paperPainted = "Paper-painted"
     static let origamiPainted = "Origami-painted"
     
+    static let tsuru = "Tsuru"
+    
     static let arrow = "Arrow"
     
     static let paper = "Paper"

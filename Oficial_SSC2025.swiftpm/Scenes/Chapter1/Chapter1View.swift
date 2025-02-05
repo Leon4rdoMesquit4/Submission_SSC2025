@@ -53,7 +53,7 @@ extension Chapter1View {
     
     var part3: some View {
         Chapter1Part3View {
-            chpt = .part4
+            chpt = .part5
         }
     }
     
@@ -62,7 +62,9 @@ extension Chapter1View {
     }
     
     var part5: some View {
-        Text("Part 5")
+        Chapter1Part5View {
+            chpt = .completed
+        }
     }
     
     var completed: some View {
