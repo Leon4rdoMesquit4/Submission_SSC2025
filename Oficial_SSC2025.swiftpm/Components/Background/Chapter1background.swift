@@ -16,7 +16,7 @@ struct Chapter1PaintedBackground: View {
                 .overlay {
                     Image(ImageConstants.dirtyEffect)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                 }
             if hasBorder {
                 Rectangle()

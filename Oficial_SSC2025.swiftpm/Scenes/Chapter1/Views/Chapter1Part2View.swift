@@ -15,9 +15,7 @@ struct Chapter1Part2View: View {
         ZStack {
             Chapter1PaintedBackground(hasBorder: .constant(true))
             CustomButton(state: .play) {
-                withAnimation {
-                    action?()
-                }
+                action?()
             }.foregroundStyle(ColorsConstants.chpt1color1)
         }.ignoresSafeArea()
     }

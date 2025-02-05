@@ -9,29 +9,52 @@ import SwiftUI
 
 struct Chapter1View: View {
     @State var chpt: Chpt1viewChoose = .menu
-    @Namespace private var mountFujiAnimation
     
     var body: some View {
         ZStack {
             switch chpt {
             case .menu:
-                Chapter1MenuView {
-                    chpt = .part1
-                }
+                menu
             case .part1:
-                Chapter1Part1View {
-                    chpt = .part2
-                }
+                part1
             case .part2:
-                Chapter1Part2View {
-                    withAnimation(.smooth(duration: DurationConstants.huge)) {
-                        chpt = .part3
-                    }
-                }
+                part2
             case .part3:
-                Text("Part 3")
+                part3
+            case .completed:
+                completed
             }
-        }.background(ColorsConstants.chpt1bgcolor)
+        }
+    }
+    
+    var menu: some View {
+        Chapter1MenuView {
+            chpt = .part1
+        }
+    }
+    
+    var part1: some View {
+        Chapter1Part1View {
+            chpt = .part2
+        }
+    }
+    
+    var part2: some View {
+        Chapter1Part2View {
+            chpt = .completed
+        }
+    }
+    
+    var part3: some View {
+        Text("Part 3")
+    }
+    
+    var completed: some View {
+        CompletedView(chapterNumber: .one) {
+            Chapter1PaintedBackground(hasBorder: .constant(true))
+        } action: {
+            
+        }
     }
 }
 
@@ -44,4 +67,5 @@ enum Chpt1viewChoose {
     case part1
     case part2
     case part3
+    case completed
 }
