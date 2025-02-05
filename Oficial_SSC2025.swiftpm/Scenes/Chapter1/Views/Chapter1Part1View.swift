@@ -26,10 +26,12 @@ struct Chapter1Part1View: View {
                 }
             }
     }
-    
+}
+
+extension Chapter1Part1View {
     var part1: some View {
         ZStack {
-            Chapter1PaintedBackground(hasBorder: $hasBorder)
+            background
             VStack {
                 Spacer()
                 if isViewPresented {
@@ -39,6 +41,10 @@ struct Chapter1Part1View: View {
             }
             bottomButton
         }
+    }
+    
+    var background: some View {
+        Chapter1PaintedBackground(hasBorder: $hasBorder)
     }
     
     var text: some View {
@@ -68,7 +74,6 @@ struct Chapter1Part1View: View {
         }.foregroundStyle(ColorsConstants.chpt1color2)
             .shadow(radius: SizeConstants.shadowBlur)
     }
-    
 }
 
 extension Chapter1Part1View {

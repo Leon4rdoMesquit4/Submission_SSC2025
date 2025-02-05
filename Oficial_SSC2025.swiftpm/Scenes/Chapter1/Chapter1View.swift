@@ -21,12 +21,18 @@ struct Chapter1View: View {
                 part2
             case .part3:
                 part3
+            case .part4:
+                part4
+            case .part5:
+                part5
             case .completed:
                 completed
             }
         }
     }
+}
     
+extension Chapter1View {
     var menu: some View {
         Chapter1MenuView {
             chpt = .part1
@@ -41,12 +47,22 @@ struct Chapter1View: View {
     
     var part2: some View {
         Chapter1Part2View {
-            chpt = .completed
+            chpt = .part3
         }
     }
     
     var part3: some View {
-        Text("Part 3")
+        Chapter1Part3View {
+            chpt = .part4
+        }
+    }
+    
+    var part4: some View {
+        Text("Part 4")
+    }
+    
+    var part5: some View {
+        Text("Part 5")
     }
     
     var completed: some View {
@@ -58,14 +74,16 @@ struct Chapter1View: View {
     }
 }
 
-#Preview {
-    Chapter1View()
-}
-
 enum Chpt1viewChoose {
     case menu
     case part1
     case part2
     case part3
+    case part4
+    case part5
     case completed
+}
+
+#Preview {
+    Chapter1View()
 }

@@ -18,5 +18,12 @@ enum ImageConstants {
     static let gameName = "GameName-white"
     static let gameNamePainted = "GameName-painted"
     
+    static let paperPainted = "Paper-painted"
+    static let origamiPainted = "Origami-painted"
+    
+    static let arrow = "Arrow"
+    
+    static let paper = "Paper"
+    
     static let dirtyEffect = "Dirty-effect"
 }

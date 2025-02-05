@@ -13,11 +13,7 @@ struct Chapter1MenuView: View {
 extension Chapter1MenuView {
     var menu: some View {
         ZStack {
-            if isPainted {
-                Chapter1PaintedBackground(hasBorder: .constant(false))
-            } else {
-                MenuGradientBackground()
-            }
+            background
             VStack {
                 Spacer()
                 gameTitle
@@ -30,8 +26,19 @@ extension Chapter1MenuView {
         }
     }
     
+    var background: some View {
+        ZStack {
+            if isPainted {
+                Chapter1PaintedBackground(hasBorder: .constant(false))
+            } else {
+                MenuGradientBackground()
+            }
+        }
+    }
+    
     var gameTitle: some View {
         Image(!isPainted ? ImageConstants.gameName : ImageConstants.gameNamePainted)
+            .shadow(color: ColorsConstants.chpt1white.opacity(SizeConstants.gameNameOpacity), radius: !isPainted ?  SizeConstants.shadowBlur : .zero)
     }
     
     var gameSubtitle: some View {
@@ -52,6 +59,7 @@ extension Chapter1MenuView {
             }
         }
         .foregroundStyle(ColorsConstants.chpt1white)
+        .shadow(color: ColorsConstants.chpt1white, radius: SizeConstants.shadowBlur)
     }
 }
 
