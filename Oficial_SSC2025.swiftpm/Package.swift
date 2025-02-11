@@ -8,18 +8,18 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "Oficial_SSC2025",
+    name: "Origami",
     platforms: [
         .iOS("16.0")
     ],
     products: [
         .iOSApplication(
-            name: "Oficial_SSC2025",
+            name: "Origami",
             targets: ["AppModule"],
             bundleIdentifier: "leonardo.Oficial-SSC2025",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .cloud),
+            appIcon: .asset("AppIcon"),
             accentColor: .presetColor(.brown),
             supportedDeviceFamilies: [
                 .pad,
@@ -30,7 +30,8 @@ let package = Package(
                 .landscapeRight,
                 .landscapeLeft,
                 .portraitUpsideDown(.when(deviceFamilies: [.pad]))
-            ]
+            ],
+            appCategory: .education
         )
     ],
     targets: [
