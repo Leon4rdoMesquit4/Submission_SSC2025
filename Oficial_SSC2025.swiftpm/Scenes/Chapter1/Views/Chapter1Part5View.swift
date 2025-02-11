@@ -11,7 +11,6 @@ import SwiftUI
 struct Chapter1Part5View: View {
     let action: (() -> Void)?
     @State var isCompleted = false
-    @State var paperNumber: Int = 1
     
     var body: some View {
         part3

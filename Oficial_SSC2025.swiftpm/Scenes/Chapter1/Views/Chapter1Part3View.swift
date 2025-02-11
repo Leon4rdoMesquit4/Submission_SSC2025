@@ -11,7 +11,9 @@ import SwiftUI
 struct Chapter1Part3View: View {
     let action: (() -> Void)?
     @State var isCompleted = false
+    @State var assistIsOn = false
     @State var paperNumber: Int = 1
+    let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
         part3
@@ -25,10 +27,17 @@ extension Chapter1Part3View {
             background
             
             paperImage
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge * DurationConstants.long) {
+                        assistIsOn = true
+                    }
+                }
             
             captions
             
-            bottomButton
+            if isCompleted {
+                bottomButton
+            }
         }
     }
     
@@ -42,9 +51,26 @@ extension Chapter1Part3View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .overlay(alignment: .trailing) {
-                    Image(ImageConstants.arrow)
-                        .offset(x: 10, y: 150)
+                    Image(ImageConstants.assist)
+                        .offset(x: assistIsOn ? -600 : 0, y: assistIsOn ? -213 : 150)
+                        .animation(.easeOut(duration: 2.5).repeatForever(autoreverses: false), value: assistIsOn)
+                        .opacity(assistIsOn && !isCompleted ? 1 : 0)
                 }
+        }.gesture(
+            DragGesture()
+                .onChanged({ value in
+                    if !isCompleted {
+                        if value.translation.width < -100
+                            &&
+                            value.translation.width < -100 {
+                            isCompleted = true
+                        }
+                    }
+                })
+        ).onReceive(timer) { t in
+            if isCompleted && paperNumber < 5 {
+                paperNumber += 1
+            }
         }
     }
     
@@ -68,7 +94,7 @@ extension Chapter1Part3View {
 
 extension Chapter1Part3View {
     var captionText: String {
-        "You just need to fold and start!"
+        "Swipe to fold the paper!"
     }
 }
 

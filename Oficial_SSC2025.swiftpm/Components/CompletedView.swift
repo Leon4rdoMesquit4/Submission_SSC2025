@@ -16,21 +16,27 @@ struct CompletedView<Content: View>: View {
         ZStack(alignment: .center){
             content()
             VStack {
-                Text("Completed")
+                Text(title)
                     .font(FontsConstants.mainTitle)
-                Text("Chapter \(chapterNumber.rawValue)/3")
+                Text(subtitle)
                     .font(FontsConstants.subtitle)
             }
-            CustomButton(state: .play, text: "Next Chapter") {
+            CustomButton(state: .play, text: nextChapter) {
                 action?()
             }.foregroundStyle(ColorsConstants.chpt1color1)
         }.ignoresSafeArea()
     }
 }
 
-#Preview {
-    CompletedView(chapterNumber: .three) {
-        Chapter1PaintedBackground(hasBorder: .constant(true))
+extension CompletedView {
+    var nextChapter: String {
+        "Next Chapter"
+    }
+    var title: String {
+        "Completed"
+    }
+    var subtitle: String {
+        "Chapter \(chapterNumber.rawValue)/3"
     }
 }
 
@@ -38,4 +44,11 @@ enum ChapterNumber: Int {
     case one = 1
     case two = 2
     case three = 3
+}
+
+
+#Preview {
+    CompletedView(chapterNumber: .three) {
+        Chapter1PaintedBackground(hasBorder: .constant(true))
+    }
 }

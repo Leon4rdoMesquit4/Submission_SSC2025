@@ -72,7 +72,7 @@ extension Chapter1Part1View {
         CustomButton(state: .play) {
             action?()
         }.foregroundStyle(ColorsConstants.chpt1color2)
-            .shadow(radius: SizeConstants.shadowBlur)
+            .shadow(radius: AppearanceConstants.shadowBlur)
     }
 }
 

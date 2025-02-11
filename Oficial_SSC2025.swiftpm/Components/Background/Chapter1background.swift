@@ -20,7 +20,7 @@ struct Chapter1PaintedBackground: View {
                 }
             if hasBorder {
                 Rectangle()
-                    .stroke(style:.init(lineWidth: SizeConstants.lineWidth))
+                    .stroke(style:.init(lineWidth: AppearanceConstants.lineWidth))
                     .padding(SpacingContants.mediumLarge)
             }
         }

@@ -17,11 +17,12 @@ enum SpacingContants {
     static let extraUltraLarge: CGFloat = 80
     static let huge: CGFloat = 130
     static let maximum: CGFloat = 164
+    
     static let mountXOffset: CGFloat = 260
     static let mountYOffset: CGFloat = 66
 }
 
-enum SizeConstants {
+enum AppearanceConstants {
     static let lineWidth: CGFloat = 4
     static let shadowBlur: CGFloat = 24
     static let gameNameOpacity: CGFloat = 0.5

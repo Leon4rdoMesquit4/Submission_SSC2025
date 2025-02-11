@@ -38,7 +38,7 @@ extension Chapter1MenuView {
     
     var gameTitle: some View {
         Image(!isPainted ? ImageConstants.gameName : ImageConstants.gameNamePainted)
-            .shadow(color: ColorsConstants.chpt1white.opacity(SizeConstants.gameNameOpacity), radius: !isPainted ?  SizeConstants.shadowBlur : .zero)
+            .shadow(color: ColorsConstants.chpt1white.opacity(AppearanceConstants.gameNameOpacity), radius: !isPainted ?  AppearanceConstants.shadowBlur : .zero)
     }
     
     var gameSubtitle: some View {
@@ -59,7 +59,7 @@ extension Chapter1MenuView {
             }
         }
         .foregroundStyle(ColorsConstants.chpt1white)
-        .shadow(color: ColorsConstants.chpt1white, radius: SizeConstants.shadowBlur)
+        .shadow(color: ColorsConstants.chpt1white, radius: AppearanceConstants.shadowBlur)
     }
 }
 

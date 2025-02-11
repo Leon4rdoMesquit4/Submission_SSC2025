@@ -25,6 +25,8 @@ enum ImageConstants {
     
     static let arrow = "Arrow"
     
+    static let assist = "Assist"
+    
     static let paper = "Paper"
     
     static let dirtyEffect = "Dirty-effect"
