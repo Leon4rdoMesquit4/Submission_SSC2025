@@ -13,7 +13,7 @@ struct Chapter1Part3View: View {
     @State var isCompleted = false
     @State var assistIsOn = false
     @State var paperNumber: Int = 1
-    let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: DurationConstants.tiny * DurationConstants.long, on: .main, in: .common).autoconnect()
     
     var body: some View {
         part3
@@ -52,9 +52,9 @@ extension Chapter1Part3View {
                 .aspectRatio(contentMode: .fit)
                 .overlay(alignment: .trailing) {
                     Image(ImageConstants.assist)
-                        .offset(x: assistIsOn ? -600 : 0, y: assistIsOn ? -213 : 150)
-                        .animation(.easeOut(duration: 2.5).repeatForever(autoreverses: false), value: assistIsOn)
-                        .opacity(assistIsOn && !isCompleted ? 1 : 0)
+                        .offset(x: assistIsOn ? -SpacingContants.firstAssistXOffset : .zero, y: assistIsOn ? -SpacingContants.firstAssistYOffset1 : SpacingContants.firstAssistYOffset2)
+                        .animation(.easeOut(duration: DurationConstants.huge).repeatForever(autoreverses: false), value: assistIsOn)
+                        .opacity(assistIsOn && !isCompleted ? 1 : .zero)
                 }
         }.gesture(
             DragGesture()

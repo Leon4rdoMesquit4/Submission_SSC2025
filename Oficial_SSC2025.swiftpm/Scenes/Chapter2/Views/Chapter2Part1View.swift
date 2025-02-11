@@ -18,7 +18,7 @@ struct Chapter2Part1View: View {
 
 extension Chapter2Part1View {
     var part1: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             background
             HStack {
                 VStack {
@@ -55,6 +55,9 @@ extension Chapter2Part1View {
     
     var building: some View {
         Image(ImageConstants.building)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .padding(.top, SpacingContants.extraUltraLarge)
     }
     
     var bottomButton: some View {

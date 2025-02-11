@@ -14,7 +14,6 @@ struct MyApp: App {
             case .three:
                 Chapter2View()
             }
-            
         }
     }
 }

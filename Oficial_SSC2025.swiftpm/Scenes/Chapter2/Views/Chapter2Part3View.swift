@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Chapter2Part2View: View {
+struct Chapter2Part3View: View {
     let action: (() -> Void)?
     
     var body: some View {
@@ -17,12 +17,12 @@ struct Chapter2Part2View: View {
     }
 }
 
-extension Chapter2Part2View {
+extension Chapter2Part3View {
     var part2: some View {
         ZStack(alignment: .bottom) {
             background
             
-            blockedArteryImage
+//            stentImage
             
             captions
             
@@ -34,7 +34,7 @@ extension Chapter2Part2View {
         Chapter2Background()
     }
     
-    var blockedArteryImage: some View {
+    var stentImage: some View {
         Image(ImageConstants.blockedArtery)
             .resizable()
             .aspectRatio(contentMode: .fit)
@@ -55,10 +55,10 @@ extension Chapter2Part2View {
     }
 }
 
-extension Chapter2Part2View {
+extension Chapter2Part3View {
     
     var captionText: String {
-        "When an artery becomes too narrow due to plaque buildup, blood flow is restricted. A stent is used to open the artery and keep it clear, preventing serious conditions like heart attacks or strokes."
+        "This stent uses an origami-inspired folding technique to stay compact and expand when needed."
     }
     
 }

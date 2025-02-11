@@ -45,13 +45,13 @@ extension Chapter2View {
     }
     
     var part3: some View {
-        Chapter1Part3View {
+        Chapter2Part3View {
             chpt = .part4
         }
     }
     
     var part4: some View {
-        Chapter1Part4View {
+        Chapter2Part4View {
             chpt = .part5
         }
     }
@@ -63,8 +63,8 @@ extension Chapter2View {
     }
     
     var completed: some View {
-        CompletedView(chapterNumber: .one) {
-            Chapter1PaintedBackground(hasBorder: .constant(true))
+        CompletedView(chapterNumber: .two) {
+            Chapter2Background()
         } action: {
             
         }

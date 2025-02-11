@@ -31,6 +31,9 @@ enum ImageConstants {
     
     static let artery = "Artery-clean"
     static let blockedArtery = "Artery-blocked"
+    static let blockedArtery1 = "Artery-blocked1"
+    static let cable = "Cable"
+    static let stentCompressed = "Stent-compressed"
     
     static let paper = "Paper"
     
