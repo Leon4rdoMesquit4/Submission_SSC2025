@@ -27,6 +27,11 @@ enum ImageConstants {
     
     static let assist = "Assist"
     
+    static let building = "Building"
+    
+    static let artery = "Artery-clean"
+    static let blockedArtery = "Artery-blocked"
+    
     static let paper = "Paper"
     
     static let dirtyEffect = "Dirty-effect"

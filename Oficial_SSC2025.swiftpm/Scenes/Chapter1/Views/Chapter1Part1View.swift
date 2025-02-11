@@ -19,7 +19,7 @@ struct Chapter1Part1View: View {
                 withAnimation(.smooth)  {
                     isViewPresented = true
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.short + DurationConstants.extraShort) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.extraShort) {
                     withAnimation(.smooth) {
                         hasBorder = true
                     }
@@ -59,7 +59,7 @@ extension Chapter1Part1View {
             }
             Text(origamiSubtitle2)
                 .font(FontsConstants.subtitle2)
-        }
+        }.foregroundStyle(ColorsConstants.chpt1color1)
     }
     
     var mountFuji: some View {

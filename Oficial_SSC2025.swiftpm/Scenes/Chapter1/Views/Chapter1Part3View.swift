@@ -28,7 +28,7 @@ extension Chapter1Part3View {
             
             paperImage
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge * DurationConstants.long) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
                         assistIsOn = true
                     }
                 }
