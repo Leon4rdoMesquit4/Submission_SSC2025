@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  CompletedView.swift
 //  Origami
 //
 //  Created by Leonardo Mesquita Alves on 05/02/25.

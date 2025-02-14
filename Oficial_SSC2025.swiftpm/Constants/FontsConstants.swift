@@ -11,6 +11,7 @@ enum FontsConstants {
     static let mainTitle = Font.largeTitle
     static let oriTitle = Font.title
     static let oriTitle2 = Font.title2
+    static let credits = Font.title2
     static let subtitle = Font.title3
     static let subtitle2 = Font.headline
     static let body = Font.body

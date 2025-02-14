@@ -1,5 +1,5 @@
 //
-//  Chapter2View.swift
+//  Chapter3View.swift
 //  Origami
 //
 //  Created by Leonardo Mesquita Alves on 10/02/25.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Chapter2View: View {
-    @State var chpt: Chpt2viewChoose = .part1
+struct Chapter3View: View {
+    @State var chpt: Chpt3viewChoose = .part1
     @Binding var changeToNextChapter: Chapters
     
     var body: some View {
@@ -31,7 +31,7 @@ struct Chapter2View: View {
     }
 }
     
-extension Chapter2View {
+extension Chapter3View {
     var part1: some View {
         Chapter2Part1View {
             chpt = .part2
@@ -71,7 +71,7 @@ extension Chapter2View {
     }
 }
 
-enum Chpt2viewChoose {
+enum Chpt3viewChoose {
     case part1
     case part2
     case part3
@@ -81,5 +81,5 @@ enum Chpt2viewChoose {
 }
 
 #Preview {
-    Chapter2View(changeToNextChapter: .constant(.two))
+    Chapter3View(changeToNextChapter: .constant(.two))
 }

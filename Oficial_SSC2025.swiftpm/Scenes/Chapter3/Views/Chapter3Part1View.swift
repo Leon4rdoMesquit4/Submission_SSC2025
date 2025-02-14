@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Chapter2Part1View: View {
+struct Chapter3Part1View: View {
     let action: (() -> Void)?
     
     var body: some View {
@@ -16,7 +16,7 @@ struct Chapter2Part1View: View {
     }
 }
 
-extension Chapter2Part1View {
+extension Chapter3Part1View {
     var part1: some View {
         ZStack(alignment: .bottom) {
             background
@@ -35,7 +35,7 @@ extension Chapter2Part1View {
     }
     
     var background: some View {
-        Chapter3Background()
+        Chapter2Background()
     }
     
     var text: some View {
@@ -67,18 +67,18 @@ extension Chapter2Part1View {
     }
 }
 
-extension Chapter2Part1View {
+extension Chapter3Part1View {
     var origamiTitle: String {
-        "Origamii"
+        "Origamiii"
     }
     var origamiSubtitle1: String {
-        "is not just an ancient art."
+        "is also used"
     }
     var origamiSubtitle2: String {
-        "It is now used in science and technology to solve real-world problems."
+        "in space engineering to create compact, deployable structures."
     }
 }
 
 #Preview {
-    Chapter2View(changeToNextChapter: .constant(.two))
+    Chapter3View(changeToNextChapter: .constant(.two))
 }
