@@ -1,21 +1,19 @@
 //
-//  SwiftUIView.swift
-//  Oficial_SSC2025
+//  Chapter1View.swift
+//  Origami
 //
-//  Created by Leonardo Mesquita Alves on 03/02/25.
+//  Created by Leonardo Mesquita Alves on 10/02/25.
 //
 
 import SwiftUI
 
-struct Chapter1View: View {
-    @State var chpt: Chpt1viewChoose = .menu
+struct Chapter2View: View {
+    @State var chpt: Chpt2viewChoose = .part1
     @Binding var changeToNextChapter: Chapters
     
     var body: some View {
         ZStack {
             switch chpt {
-            case .menu:
-                menu
             case .part1:
                 part1
             case .part2:
@@ -33,54 +31,47 @@ struct Chapter1View: View {
     }
 }
     
-extension Chapter1View {
-    var menu: some View {
-        Chapter1MenuView {
-            chpt = .part1
-        }
-    }
-    
+extension Chapter2View {
     var part1: some View {
-        Chapter1Part1View {
+        Chapter2Part1View {
             chpt = .part2
         }
     }
     
     var part2: some View {
-        Chapter1Part2View {
+        Chapter2Part2View {
             chpt = .part3
         }
     }
     
     var part3: some View {
-        Chapter1Part3View {
+        Chapter2Part3View {
             chpt = .part4
         }
     }
     
     var part4: some View {
-        Chapter1Part4View {
+        Chapter2Part4View {
             chpt = .part5
         }
     }
     
     var part5: some View {
-        Chapter1Part5View {
+        Chapter2Part5View {
             chpt = .completed
         }
     }
     
     var completed: some View {
-        CompletedView(chapterNumber: .one) {
-            Chapter1PaintedBackground(hasBorder: .constant(true))
+        CompletedView(chapterNumber: .two) {
+            Chapter2Background()
         } action: {
-            changeToNextChapter = .two
+            changeToNextChapter = .one
         }
     }
 }
 
-enum Chpt1viewChoose {
-    case menu
+enum Chpt2viewChoose {
     case part1
     case part2
     case part3
@@ -90,5 +81,5 @@ enum Chpt1viewChoose {
 }
 
 #Preview {
-    Chapter1View(changeToNextChapter: .constant(.two))
+    Chapter2View(changeToNextChapter: .constant(.two))
 }

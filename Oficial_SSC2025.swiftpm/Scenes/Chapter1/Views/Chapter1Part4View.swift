@@ -11,11 +11,18 @@ import SwiftUI
 struct Chapter1Part4View: View {
     let action: (() -> Void)?
     @State var isCompleted = false
-    @State var paperNumber: Int = 5
+    @State var assistIsOn = false
+    @State var paperNumber: Int = 1
+    let timer = Timer.publish(every: DurationConstants.tiny * DurationConstants.long, on: .main, in: .common).autoconnect()
     
     var body: some View {
         part3
             .ignoresSafeArea()
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.long) {
+                    assistIsOn = true
+                }
+            }
     }
 }
 
@@ -28,7 +35,9 @@ extension Chapter1Part4View {
             
             captions
             
-            bottomButton
+            if isCompleted {
+                bottomButton
+            }
         }
     }
     
@@ -38,20 +47,38 @@ extension Chapter1Part4View {
     
     var paperImage: some View {
         VStack {
-            Image(ImageConstants.paper + "\(paperNumber)")
+            Image(ImageConstants.tsuruFolded + "\(paperNumber)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .overlay(alignment: .trailing) {
-                    Image(ImageConstants.arrow)
-                        .offset(x: 10, y: 150)
+                    Image(ImageConstants.assist)
+                        .offset(x: assistIsOn ? -200 : -400, y: assistIsOn ? 100 : -100)
+                        .animation(.easeOut(duration: DurationConstants.long).repeatForever(autoreverses: false), value: assistIsOn)
+                        .opacity(assistIsOn && !isCompleted ? 1 : 0)
                 }
-        }
+                .gesture(
+                    DragGesture()
+                        .onChanged({ value in
+                            if !isCompleted {
+                                if value.translation.width > 50 &&
+                                    value.translation.height > 100
+                                {
+                                    isCompleted = true
+                                }
+                            }
+                        })
+                ).onReceive(timer) { t in
+                    if isCompleted && paperNumber < 5 {
+                        paperNumber += 1
+                    }
+                }
+        }.offset(x: -10, y: 0)
     }
     
     var captions: some View {
         VStack {
             Spacer()
-            Text(captionText)
+            Text(isCompleted ? captionText2 : captionText1)
                 .font(FontsConstants.body)
                 .foregroundStyle(ColorsConstants.chpt1color1)
                 .padding(.horizontal, SpacingContants.huge)
@@ -67,7 +94,10 @@ extension Chapter1Part4View {
 }
 
 extension Chapter1Part4View {
-    var captionText: String {
+    var captionText1: String {
+        "Swipe to finish the tsuru!"
+    }
+    var captionText2: String {
         "Like magic, you've crafted a Tsuru."
     }
 }
