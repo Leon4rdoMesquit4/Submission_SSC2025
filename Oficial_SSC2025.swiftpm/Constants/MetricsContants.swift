@@ -20,12 +20,19 @@ enum SpacingContants {
     
     static let mountXOffset: CGFloat = 260
     static let mountYOffset: CGFloat = 66
+    static let stentXOffset: CGFloat = 600
+    
+    //First Assist from part 3 chapter 1
+    static let firstAssistXOffset: CGFloat = 600
+    static let firstAssistYOffset1: CGFloat = 213
+    static let firstAssistYOffset2: CGFloat = 150
 }
 
 enum AppearanceConstants {
     static let lineWidth: CGFloat = 4
     static let shadowBlur: CGFloat = 24
     static let gameNameOpacity: CGFloat = 0.5
+    static let arteryScaleEffect: CGFloat = 0.8
     static let mountScale: CGFloat = 1.8
 }
 
