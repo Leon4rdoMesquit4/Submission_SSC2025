@@ -12,10 +12,17 @@ struct Chapter2Part4View: View {
     let action: (() -> Void)?
     @State var stentXOffset: CGFloat = -SpacingContants.stentXOffset
     @State var lastPosition: CGFloat = -SpacingContants.stentXOffset
+    @State var assistIsOn = false
+    @State var firstAnimationIsCompleted = false
     
     var body: some View {
         part2
             .ignoresSafeArea()
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
+                    assistIsOn = true
+                }
+            }
     }
 }
 
@@ -59,11 +66,22 @@ extension Chapter2Part4View {
                                 lastPosition = lastPosition + value.translation.width
                             })
                             .onChanged({ value in
-                                stentXOffset = lastPosition + value.translation.width
-                                print(value.translation.width)
-                            }
-                                      )
+                                assistIsOn = false
+                                if stentXOffset < 50 {
+                                    stentXOffset = lastPosition + value.translation.width
+                                    print(stentXOffset)
+                                } else {
+                                    firstAnimationIsCompleted = true
+                                    stentXOffset = 50
+                                }
+                            })
                     )
+            }.overlay(alignment: .leading) {
+                Image(ImageConstants.assist2)
+                    .offset(x: assistIsOn ? SpacingContants.firstAssistXOffset : 0, y: assistIsOn ? 0 : 0)
+                    .animation(.easeOut(duration: DurationConstants.extraLong).repeatForever(autoreverses: false), value: assistIsOn)
+                    .opacity(assistIsOn ? 1 : .zero)
+                    .offset(x: 0, y: -SpacingContants.small)
             }
             Spacer()
         }
@@ -81,12 +99,17 @@ extension Chapter2Part4View {
         CustomButton(state: .play) {
             action?()
         }.foregroundStyle(ColorsConstants.chpt2color)
+            .opacity(.zero)
     }
 }
 
 extension Chapter2Part4View {
     
     var captionText: String {
+        "Drag the folded stent to the blocked area to restore blood flow."
+    }
+    
+    var captionText2: String {
         "Drag the folded stent to the blocked area to restore blood flow."
     }
     

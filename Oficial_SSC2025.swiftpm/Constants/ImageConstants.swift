@@ -26,6 +26,7 @@ enum ImageConstants {
     static let arrow = "Arrow"
     
     static let assist = "Assist"
+    static let assist2 = "Assist2"
     
     static let building = "Building"
     
