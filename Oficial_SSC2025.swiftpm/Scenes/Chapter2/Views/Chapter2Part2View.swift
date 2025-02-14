@@ -64,5 +64,5 @@ extension Chapter2Part2View {
 }
 
 #Preview {
-    Chapter2View()
+    Chapter2View(changeToNextChapter: .constant(.two))
 }

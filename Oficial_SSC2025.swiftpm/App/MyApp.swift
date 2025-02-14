@@ -10,9 +10,11 @@ struct MyApp: App {
             case .one:
                 Chapter1View(changeToNextChapter: $currentChapter)
             case .two:
-                Chapter2View()
+                Chapter2View(changeToNextChapter: $currentChapter)
             case .three:
-                Chapter2View()
+                Chapter2View(changeToNextChapter: $currentChapter)
+            case .creditsScene:
+                Text("Credits")
             }
         }
     }
@@ -22,4 +24,5 @@ enum Chapters {
     case one
     case two
     case three
+    case creditsScene
 }

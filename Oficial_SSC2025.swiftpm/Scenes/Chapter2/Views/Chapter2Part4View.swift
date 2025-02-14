@@ -19,7 +19,7 @@ struct Chapter2Part4View: View {
         part2
             .ignoresSafeArea()
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.long) {
                     assistIsOn = true
                 }
             }
@@ -34,8 +34,6 @@ extension Chapter2Part4View {
             arteryImage
             
             captions
-            
-            bottomButton
         }
     }
     
@@ -71,8 +69,8 @@ extension Chapter2Part4View {
                                     stentXOffset = lastPosition + value.translation.width
                                     print(stentXOffset)
                                 } else {
-                                    firstAnimationIsCompleted = true
                                     stentXOffset = 50
+                                    action?()
                                 }
                             })
                     )
@@ -88,18 +86,11 @@ extension Chapter2Part4View {
     }
     
     var captions: some View {
-        Text(captionText)
+        Text(firstAnimationIsCompleted ? captionText2 : captionText)
             .font(FontsConstants.body)
             .foregroundStyle(ColorsConstants.chpt2color)
             .offset(x: .zero, y: -SpacingContants.ultraLarge - SpacingContants.medium)
             .padding(.horizontal, SpacingContants.huge)
-    }
-    
-    var bottomButton: some View {
-        CustomButton(state: .play) {
-            action?()
-        }.foregroundStyle(ColorsConstants.chpt2color)
-            .opacity(.zero)
     }
 }
 
@@ -110,7 +101,7 @@ extension Chapter2Part4View {
     }
     
     var captionText2: String {
-        "Drag the folded stent to the blocked area to restore blood flow."
+        "Pinch outward to expand the stent and open the artery."
     }
     
 }

@@ -22,7 +22,11 @@ extension Chapter2Part3View {
         ZStack(alignment: .bottom) {
             background
             
-//            stentImage
+            VStack {
+                Spacer()
+                stentImage
+                Spacer()
+            }
             
             captions
             
@@ -35,9 +39,10 @@ extension Chapter2Part3View {
     }
     
     var stentImage: some View {
-        Image(ImageConstants.blockedArtery)
+        Image(ImageConstants.stents)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .scaleEffect(0.8)
     }
     
     var captions: some View {
@@ -64,5 +69,5 @@ extension Chapter2Part3View {
 }
 
 #Preview {
-    Chapter2View()
+    Chapter2View(changeToNextChapter: .constant(.two))
 }

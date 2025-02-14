@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Chapter2View: View {
     @State var chpt: Chpt2viewChoose = .part1
-    @State var changeToNextChapter: Bool = false
+    @Binding var changeToNextChapter: Chapters
     
     var body: some View {
         ZStack {
@@ -57,7 +57,7 @@ extension Chapter2View {
     }
     
     var part5: some View {
-        Chapter1Part5View {
+        Chapter2Part5View {
             chpt = .completed
         }
     }
@@ -66,7 +66,7 @@ extension Chapter2View {
         CompletedView(chapterNumber: .two) {
             Chapter2Background()
         } action: {
-            
+            changeToNextChapter = .one
         }
     }
 }
@@ -81,5 +81,5 @@ enum Chpt2viewChoose {
 }
 
 #Preview {
-    Chapter2View()
+    Chapter2View(changeToNextChapter: .constant(.two))
 }

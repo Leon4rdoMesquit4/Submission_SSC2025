@@ -18,6 +18,11 @@ struct Chapter1Part3View: View {
     var body: some View {
         part3
             .ignoresSafeArea()
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
+                    assistIsOn = true
+                }
+            }
     }
 }
 
@@ -27,11 +32,7 @@ extension Chapter1Part3View {
             background
             
             paperImage
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
-                        assistIsOn = true
-                    }
-                }
+                
             
             captions
             
@@ -62,7 +63,7 @@ extension Chapter1Part3View {
                     if !isCompleted {
                         if value.translation.width < -100
                             &&
-                            value.translation.width < -100 {
+                            value.translation.height < -100 {
                             isCompleted = true
                         }
                     }

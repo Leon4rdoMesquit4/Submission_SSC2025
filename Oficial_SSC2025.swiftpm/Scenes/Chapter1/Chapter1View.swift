@@ -74,7 +74,6 @@ extension Chapter1View {
         CompletedView(chapterNumber: .one) {
             Chapter1PaintedBackground(hasBorder: .constant(true))
         } action: {
-            print("AIII")
             changeToNextChapter = .two
         }
     }
