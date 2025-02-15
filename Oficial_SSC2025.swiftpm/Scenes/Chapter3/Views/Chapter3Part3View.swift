@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct Chapter3Part2View: View {
+struct Chapter3Part3View: View {
     let action: (() -> Void)?
     
     var body: some View {
-        part2
+        part3
             .ignoresSafeArea()
     }
 }
 
-extension Chapter3Part2View {
-    var part2: some View {
+extension Chapter3Part3View {
+    var part3: some View {
         ZStack(alignment: .bottom) {
             background
             
@@ -59,14 +59,14 @@ extension Chapter3Part2View {
     }
 }
 
-extension Chapter3Part2View {
+extension Chapter3Part3View {
     var captionText: String {
-        "The James Webb Space Telescope was launched folded to fit inside a rocket and unfolded in space."
+        "Its massive sunshield, inspired by origami, protects the telescope from the Sun’s heat and light."
     }
 }
 
 #Preview {
-    Chapter3Part2View {
+    Chapter3Part3View {
         
     }
 }

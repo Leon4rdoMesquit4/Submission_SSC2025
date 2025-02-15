@@ -66,7 +66,7 @@ extension Chapter2View {
         CompletedView(chapterNumber: .two) {
             Chapter2Background()
         } action: {
-            changeToNextChapter = .one
+            changeToNextChapter = .three
         }
     }
 }

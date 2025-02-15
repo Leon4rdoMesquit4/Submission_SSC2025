@@ -35,7 +35,7 @@ extension Chapter2Part1View {
     }
     
     var background: some View {
-        Chapter3Background()
+        Chapter2Background()
     }
     
     var text: some View {

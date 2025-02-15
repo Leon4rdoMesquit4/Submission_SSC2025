@@ -33,40 +33,40 @@ struct Chapter3View: View {
     
 extension Chapter3View {
     var part1: some View {
-        Chapter2Part1View {
+        Chapter3Part1View {
             chpt = .part2
         }
     }
     
     var part2: some View {
-        Chapter2Part2View {
+        Chapter3Part2View {
             chpt = .part3
         }
     }
     
     var part3: some View {
-        Chapter2Part3View {
+        Chapter3Part3View {
             chpt = .part4
         }
     }
     
     var part4: some View {
-        Chapter2Part4View {
+        Chapter3Part2View {
             chpt = .part5
         }
     }
     
     var part5: some View {
-        Chapter2Part5View {
+        Chapter3Part5View {
             chpt = .completed
         }
     }
     
     var completed: some View {
-        CompletedView(chapterNumber: .two) {
-            Chapter2Background()
+        CompletedView(chapterNumber: .three) {
+            Chapter3Background()
         } action: {
-            changeToNextChapter = .one
+            changeToNextChapter = .creditsScene
         }
     }
 }

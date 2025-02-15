@@ -22,6 +22,7 @@ struct Chapter1PaintedBackground: View {
                 Rectangle()
                     .stroke(style:.init(lineWidth: AppearanceConstants.lineWidth))
                     .padding(SpacingContants.mediumLarge)
+                    .foregroundStyle(ColorsConstants.chpt1color1)
             }
         }
     }

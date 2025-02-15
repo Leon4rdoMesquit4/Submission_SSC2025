@@ -23,7 +23,6 @@ extension Chapter3Part1View {
             HStack {
                 VStack {
                     Spacer()
-                    building
                 }
                 Spacer()
                 VStack {
@@ -35,7 +34,7 @@ extension Chapter3Part1View {
     }
     
     var background: some View {
-        Chapter2Background()
+        Chapter3Background()
     }
     
     var text: some View {
@@ -50,7 +49,7 @@ extension Chapter3Part1View {
             Text(origamiSubtitle2)
                 .font(FontsConstants.subtitle2)
         }.padding(.trailing, SpacingContants.ultraLarge)
-            .foregroundStyle(ColorsConstants.chpt2color)
+            .foregroundStyle(ColorsConstants.chpt3color)
     }
     
     var building: some View {
@@ -63,7 +62,7 @@ extension Chapter3Part1View {
     var bottomButton: some View {
         CustomButton(state: .play) {
             action?()
-        }.foregroundStyle(ColorsConstants.chpt2color)
+        }.foregroundStyle(ColorsConstants.chpt3color)
     }
 }
 
