@@ -51,7 +51,7 @@ extension Chapter3View {
     }
     
     var part4: some View {
-        Chapter3Part2View {
+        Chapter3Part4View {
             chpt = .part5
         }
     }

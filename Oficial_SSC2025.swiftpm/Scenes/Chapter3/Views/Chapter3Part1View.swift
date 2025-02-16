@@ -22,12 +22,12 @@ extension Chapter3Part1View {
             background
             HStack {
                 VStack {
-                    Spacer()
-                }
-                Spacer()
-                VStack {
                     text
                 }.frame(alignment: .center)
+                Spacer()
+                VStack {
+                    Spacer()
+                }
             }
             bottomButton
         }
@@ -38,7 +38,7 @@ extension Chapter3Part1View {
     }
     
     var text: some View {
-        VStack{
+        VStack(alignment: .leading) {
             HStack(alignment: .bottom, spacing: SpacingContants.small) {
                 Text(origamiTitle)
                     .font(FontsConstants.oriTitle)
@@ -48,7 +48,9 @@ extension Chapter3Part1View {
             }
             Text(origamiSubtitle2)
                 .font(FontsConstants.subtitle2)
-        }.padding(.trailing, SpacingContants.ultraLarge)
+            Text(origamiSubtitle3)
+                .font(FontsConstants.subtitle2)
+        }.padding(.leading, SpacingContants.ultraLarge)
             .foregroundStyle(ColorsConstants.chpt3color)
     }
     
@@ -74,7 +76,10 @@ extension Chapter3Part1View {
         "is also used"
     }
     var origamiSubtitle2: String {
-        "in space engineering to create compact, deployable structures."
+        "in space engineering to create compact, "
+    }
+    var origamiSubtitle3: String {
+        "deployable structures."
     }
 }
 

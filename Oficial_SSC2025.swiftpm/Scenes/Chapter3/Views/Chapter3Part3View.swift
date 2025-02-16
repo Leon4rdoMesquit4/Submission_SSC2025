@@ -22,7 +22,6 @@ extension Chapter3Part3View {
             background
             
             VStack {
-                Spacer()
                 jamesWebbImage
                 Spacer()
             }
@@ -38,7 +37,7 @@ extension Chapter3Part3View {
     }
     
     var jamesWebbImage: some View {
-        Image("")
+        Image(ImageConstants.sunshield)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .scaleEffect(0.8)

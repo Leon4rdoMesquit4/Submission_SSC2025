@@ -26,6 +26,10 @@ enum ImageConstants {
     
     static let arrow = "Arrow"
     
+    static let paper = "Paper"
+    
+    static let dirtyEffect = "Dirty-effect"
+    
     static let assist = "Assist"
     static let assist2 = "Assist2"
     
@@ -42,6 +46,7 @@ enum ImageConstants {
     static let bloodFlow = "Blood-flow"
     
     static let cable = "Cable"
+    
     static let stentCompressed = "Stent-compressed"
     static let stentExpanded2 = "Stent-expanded2"
     static let stentExpanded3 = "Stent-expanded3"
@@ -49,7 +54,7 @@ enum ImageConstants {
     static let stentExpanded1 = "Stent-expanded1"
     static let stents = "Stents"
     
-    static let paper = "Paper"
+    static let sunshield = "Sunshield"
     
-    static let dirtyEffect = "Dirty-effect"
+    static let jamesWebb = "JamesWebb"
 }

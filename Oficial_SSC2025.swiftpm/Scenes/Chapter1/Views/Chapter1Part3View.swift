@@ -19,7 +19,7 @@ struct Chapter1Part3View: View {
         part3
             .ignoresSafeArea()
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.huge) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + DurationConstants.long) {
                     assistIsOn = true
                 }
             }
