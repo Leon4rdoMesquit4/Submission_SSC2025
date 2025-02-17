@@ -57,4 +57,7 @@ enum ImageConstants {
     static let sunshield = "Sunshield"
     
     static let jamesWebb = "JamesWebb"
+    static let jamesWebbFolded = "JamesWebb-folded"
+    
+    static let tower = "Tower"
 }

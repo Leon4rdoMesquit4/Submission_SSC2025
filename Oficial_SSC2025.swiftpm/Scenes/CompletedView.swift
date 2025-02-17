@@ -33,7 +33,7 @@ extension CompletedView {
         "Next Chapter"
     }
     var title: String {
-        "Completed"
+        chapterNumber == .three ? "The end!" : "Completed"
     }
     var subtitle: String {
         "Chapter \(chapterNumber.rawValue)/3"

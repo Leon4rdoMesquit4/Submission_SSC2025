@@ -27,6 +27,7 @@ extension Chapter3Part1View {
                 Spacer()
                 VStack {
                     Spacer()
+                    tower
                 }
             }
             bottomButton
@@ -51,14 +52,16 @@ extension Chapter3Part1View {
             Text(origamiSubtitle3)
                 .font(FontsConstants.subtitle2)
         }.padding(.leading, SpacingContants.ultraLarge)
+            .offset(x: 0, y: 100)
             .foregroundStyle(ColorsConstants.chpt3color)
     }
     
-    var building: some View {
-        Image(ImageConstants.building)
+    var tower: some View {
+        Image(ImageConstants.tower)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding(.top, SpacingContants.extraUltraLarge)
+            .padding(.trailing, SpacingContants.huge)
     }
     
     var bottomButton: some View {

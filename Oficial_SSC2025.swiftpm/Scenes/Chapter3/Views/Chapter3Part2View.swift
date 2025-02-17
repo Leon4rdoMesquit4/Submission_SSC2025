@@ -38,7 +38,7 @@ extension Chapter3Part2View {
     }
     
     var jamesWebbImage: some View {
-        Image("")
+        Image(ImageConstants.jamesWebbFolded)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .scaleEffect(0.8)
