@@ -67,7 +67,6 @@ extension Chapter2Part4View {
                                 assistIsOn = false
                                 if stentXOffset < 50 {
                                     stentXOffset = lastPosition + value.translation.width
-                                    print(stentXOffset)
                                 } else {
                                     stentXOffset = 50
                                     action?()

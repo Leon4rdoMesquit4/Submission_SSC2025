@@ -81,6 +81,5 @@ extension Chapter1Part2View {
 
 #Preview {
     Chapter1Part2View(action: {
-        print("Texted")
     })
 }
