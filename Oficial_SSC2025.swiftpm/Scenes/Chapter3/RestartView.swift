@@ -16,13 +16,14 @@ struct RestartView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 Text("Credits")
+                    .font(FontsConstants.credits)
                     .foregroundStyle(ColorsConstants.chpt3color)
                 Text("Leonardo Mesquita Alves")
                     .font(FontsConstants.mainTitle)
                     .foregroundStyle(ColorsConstants.chpt3color)
                 Spacer()
             }
-            CustomButton(state: .restart, text: "Restart Journey") {
+            CustomButton(state: .restart, text: "Back Menu") {
                 action?()
             }.foregroundStyle(ColorsConstants.chpt3color)
         }.ignoresSafeArea()

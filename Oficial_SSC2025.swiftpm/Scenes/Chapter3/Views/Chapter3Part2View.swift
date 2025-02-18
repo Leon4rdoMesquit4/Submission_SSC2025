@@ -41,7 +41,7 @@ extension Chapter3Part2View {
         Image(ImageConstants.jamesWebbFolded)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .scaleEffect(0.8)
+            .scaleEffect(0.67)
     }
     
     var captions: some View {

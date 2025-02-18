@@ -11,7 +11,7 @@ enum FontsConstants {
     static let mainTitle = fetchFont(weight: .extraBold, fontSize: 68)
     static let oriTitle = fetchFont(weight: .semiBold, fontSize: 67)
     static let oriTitle2 = fetchFont(weight: .semiBold, fontSize: 50)
-    static let credits = fetchFont(weight: .light, fontSize: 33)
+    static let credits = fetchFont(weight: .regular, fontSize: 33)
     static let subtitle = fetchFont(weight: .regular, fontSize: 32)
     static let subtitle2 = fetchFont(weight: .regular, fontSize: 23)
     static let body = fetchFont(weight: .medium, fontSize: 23)

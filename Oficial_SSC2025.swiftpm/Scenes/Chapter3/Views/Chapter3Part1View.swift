@@ -51,7 +51,7 @@ extension Chapter3Part1View {
                 .font(FontsConstants.subtitle2)
             Text(origamiSubtitle3)
                 .font(FontsConstants.subtitle2)
-        }.padding(.leading, SpacingContants.ultraLarge)
+        }.padding(.leading, SpacingContants.extraUltraLarge)
             .offset(x: 0, y: 100)
             .foregroundStyle(ColorsConstants.chpt3color)
     }

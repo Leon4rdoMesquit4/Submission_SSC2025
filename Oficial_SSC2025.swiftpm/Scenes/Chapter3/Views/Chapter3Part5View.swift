@@ -32,18 +32,20 @@ extension Chapter3Part5View {
     }
     
     var text: some View {
-        VStack {
+        VStack (spacing: 20){
             VStack {
-                HStack {
+                HStack(alignment: .bottom) {
                     Text(text1Part1)
                         .font(FontsConstants.body)
                         .foregroundStyle(ColorsConstants.chpt3color)
+                        .offset(x: 0, y: -10)
                     Text(text1Part2)
                         .font(FontsConstants.oriTitle2)
                         .foregroundStyle(ColorsConstants.chpt3color)
                     Text(text1Part3)
                         .font(FontsConstants.body)
                         .foregroundStyle(ColorsConstants.chpt3color)
+                        .offset(x: 0, y: -10)
                 }
                 Text(text1Part4)
                     .font(FontsConstants.body)
@@ -51,20 +53,23 @@ extension Chapter3Part5View {
             }
             
             VStack {
-                HStack {
+                HStack(alignment: .bottom) {
                     Text(text2Part1)
                         .font(FontsConstants.oriTitle2)
                         .foregroundStyle(ColorsConstants.chpt3color)
                     Text(text2Part2)
                         .font(FontsConstants.body)
                         .foregroundStyle(ColorsConstants.chpt3color)
+                        .offset(x: 0, y: -10)
                 }
-                Text(text2Part3)
-                    .font(FontsConstants.body)
-                    .foregroundStyle(ColorsConstants.chpt3color)
-                Text(text2Part4)
-                    .font(FontsConstants.bodyBolded)
-                    .foregroundStyle(ColorsConstants.chpt3color)
+                HStack {
+                    Text(text2Part3)
+                        .font(FontsConstants.body)
+                        .foregroundStyle(ColorsConstants.chpt3color)
+                    Text(text2Part4)
+                        .font(FontsConstants.bodyBolded)
+                        .foregroundStyle(ColorsConstants.chpt3color)
+                }
             }
         }
     }
