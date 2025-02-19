@@ -10,6 +10,7 @@ import SwiftUI
 struct Chapter1View: View {
     @State var chpt: Chpt1viewChoose = .menu
     @Binding var changeToNextChapter: Chapters
+    @EnvironmentObject var audioManager: AudioManager
     
     var body: some View {
         ZStack {
@@ -29,6 +30,8 @@ struct Chapter1View: View {
             case .completed:
                 completed
             }
+        }.onAppear {
+            audioManager.playSound(sound: "MenuSong", type: "mp3")
         }
     }
 }
