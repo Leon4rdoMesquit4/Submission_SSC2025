@@ -8,7 +8,6 @@
 enum ImageConstants {
     //Button Images
     static let playbutton = "PlayButton"
-    static let nextButton = "NextButton"
     static let restartButton = "RestartButton"
     
     //Chapter 1 images
@@ -60,4 +59,7 @@ enum ImageConstants {
     static let jamesWebbFolded = "JamesWebb-folded"
     
     static let tower = "Tower"
+    
+    static let orientationTipBackground = "OrientationTipBackground"
+    static let orientationTipImage = "OrientationTipImage"
 }

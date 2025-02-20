@@ -11,8 +11,8 @@ import AVFoundation
 class AudioManager: ObservableObject{
     var player: AVAudioPlayer?
     
-    func playSound(sound: String, type: String) {
-        if let path = Bundle.main.path(forResource: sound, ofType: type) {
+    func playSound(sound: AudioName) {
+        if let path = Bundle.main.path(forResource: sound.rawValue, ofType: "mp3") {
             do {
                 player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 player?.play()
@@ -27,4 +27,9 @@ class AudioManager: ObservableObject{
     func forceStop() {
         player?.stop()
     }
+}
+
+enum AudioName: String {
+    case chapter2and3 = "BackgroundSong"
+    case chapter1 = "MenuSong"
 }

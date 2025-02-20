@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Chapter3View: View {
-    @State var chpt: Chpt3viewChoose = .part1
+    @State var chpt: Chpt3SelectedPart = .part1
     @Binding var changeToNextChapter: Chapters
     
     var body: some View {
@@ -71,7 +71,7 @@ extension Chapter3View {
     }
 }
 
-enum Chpt3viewChoose {
+enum Chpt3SelectedPart {
     case part1
     case part2
     case part3

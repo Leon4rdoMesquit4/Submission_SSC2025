@@ -5,7 +5,7 @@
 //  Created by Leonardo Mesquita Alves on 31/01/25.
 //
 
-import CoreGraphics
+import Foundation
 
 enum GradientConstants {
     //Chapter 1 home page backgroung gradient stops

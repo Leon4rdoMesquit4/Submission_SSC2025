@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Chapter2View: View {
-    @State var chpt: Chpt2viewChoose = .part1
+    @State var chpt: Chpt2SelectedPart = .part1
     @Binding var changeToNextChapter: Chapters
     @EnvironmentObject var audioManager: AudioManager
     
@@ -29,7 +29,7 @@ struct Chapter2View: View {
                 completed
             }
         }.onAppear {
-            audioManager.playSound(sound: "BackgroundSong", type: "mp3")
+            audioManager.playSound(sound: .chapter2and3)
         }
     }
 }
@@ -74,7 +74,7 @@ extension Chapter2View {
     }
 }
 
-enum Chpt2viewChoose {
+enum Chpt2SelectedPart {
     case part1
     case part2
     case part3

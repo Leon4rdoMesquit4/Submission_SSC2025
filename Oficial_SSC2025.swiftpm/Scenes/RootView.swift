@@ -10,6 +10,7 @@ import SwiftUI
 struct RootView: View {
     @State var currentChapter: Chapters = .one
     @StateObject private var manager = AudioManager()
+    @State var isTipShown: Bool = true
     
     var body: some View {
         ZStack {
@@ -25,7 +26,25 @@ struct RootView: View {
                     currentChapter = .one
                 }
             }
-        }.environmentObject(manager)
+        }.overlay{
+//            if isTipShown {
+                OrientationTipView()
+                    .onAppear {
+                        Task {
+                            do {
+                                try await Task.sleep(nanoseconds: 6_000_000_000)
+                                isTipShown = false
+                            } catch {
+                                print("Task sleep error: \(error)")
+                            }
+                        }
+                    }.opacity(isTipShown ? 1 : 0)
+                .blur(radius: isTipShown ? 0 : 30)
+                .scaleEffect(isTipShown ? 1 : 1.1)
+                    .animation(.spring(duration: 2), value: isTipShown)
+//            }
+        }.ignoresSafeArea()
+        .environmentObject(manager)
     }
 }
 
