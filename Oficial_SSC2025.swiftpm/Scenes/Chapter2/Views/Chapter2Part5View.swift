@@ -65,9 +65,9 @@ extension Chapter2Part5View {
                     .aspectRatio(contentMode: .fit)
                     .scaleEffect(AppearanceConstants.arteryScaleEffect)
                     .gesture (
-                        MagnificationGesture()
+                        DragGesture()
                             .onChanged({ value in
-                                if value > 2.5 {
+                                if value.translation.height > -100 || value.translation.height < 100 {
                                     firstAnimationIsCompleted = true
                                 }
                             })
@@ -84,13 +84,7 @@ extension Chapter2Part5View {
             }.overlay(alignment: .leading) {
                 ZStack {
                     Image(ImageConstants.assist2)
-                        .offset(x: assistIsOn ? 900 : 700, y: assistIsOn ? -200 : -30)
-                        .animation(.easeOut(duration: DurationConstants.long).repeatForever(autoreverses: false), value: assistIsOn)
-                        .opacity(assistIsOn ? 1 : .zero)
-                        .offset(x: 0, y: -SpacingContants.small)
-                    
-                    Image(ImageConstants.assist2)
-                        .offset(x: assistIsOn ? 300 : 500, y: assistIsOn ? 200 : 30)
+                        .offset(x: 620, y: assistIsOn ? -250 : -30)
                         .animation(.easeOut(duration: DurationConstants.long).repeatForever(autoreverses: false), value: assistIsOn)
                         .opacity(assistIsOn ? 1 : .zero)
                         .offset(x: 0, y: -SpacingContants.small)
@@ -164,7 +158,7 @@ extension Chapter2Part5View {
 extension Chapter2Part5View {
     
     var captionText1: String {
-        "Pinch outward to expand the stent and open the artery."
+        "Swipe to expand the stent and open the artery."
     }
     
     var captionText2: String {

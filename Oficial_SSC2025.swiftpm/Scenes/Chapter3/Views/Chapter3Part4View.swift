@@ -54,9 +54,9 @@ extension Chapter3Part4View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .gesture (
-                MagnificationGesture()
+                DragGesture()
                     .onChanged({ value in
-                        if value > 2.5 {
+                        if value.translation.width > 100 || value.translation.height > -100 || value.translation.width > -100 || value.translation.height > 100 {
                             isCompleted = true
                             assistIsOn = false
                         }
@@ -65,15 +65,9 @@ extension Chapter3Part4View {
             .overlay(alignment: .leading) {
                 ZStack {
                     Image(ImageConstants.assist2)
-                        .offset(x: assistIsOn ? 760 : 600, y: assistIsOn ? -100 : -30)
+                        .offset(x: assistIsOn ? 790 : 600, y: assistIsOn ? -150 : -30)
                         .animation(.easeOut(duration: DurationConstants.long).repeatForever(autoreverses: false), value: assistIsOn)
-                        .opacity(assistIsOn ? 1 : .zero)
-                        .offset(x: 0, y: -SpacingContants.small)
-                    
-                    Image(ImageConstants.assist2)
-                        .offset(x: assistIsOn ? 250 : 420, y: assistIsOn ? 100 : 30)
-                        .animation(.easeOut(duration: DurationConstants.long).repeatForever(autoreverses: false), value: assistIsOn)
-                        .opacity(assistIsOn ? 1 : .zero)
+                        .opacity(assistIsOn && !isCompleted ? 1 : .zero)
                         .offset(x: 0, y: -SpacingContants.small)
                 }
             }

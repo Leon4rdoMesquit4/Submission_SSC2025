@@ -100,7 +100,7 @@ extension Chapter2Part4View {
     }
     
     var captionText2: String {
-        "Pinch outward to expand the stent and open the artery."
+        "Swipe to expand the stent and open the artery."
     }
     
 }

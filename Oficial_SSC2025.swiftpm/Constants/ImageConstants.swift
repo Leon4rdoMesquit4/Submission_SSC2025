@@ -22,9 +22,7 @@ enum ImageConstants {
     
     static let tsuru = "Tsuru"
     static let tsuruFolded = "Tsuru-folded"
-    
-    static let arrow = "Arrow"
-    
+        
     static let paper = "Paper"
     
     static let dirtyEffect = "Dirty-effect"

@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-class AudioManager: ObservableObject{
+class AudioManager: ObservableObject {
     var player: AVAudioPlayer?
     
     func playSound(sound: AudioName) {
@@ -16,10 +16,10 @@ class AudioManager: ObservableObject{
             do {
                 player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 player?.play()
-                player?.volume = 0.1
+                player?.volume = sound == .chapter2and3 ? 0.2 : 0.1
                 player?.numberOfLoops = -1
             } catch {
-                print("ERROR")
+                print("Audio error: \(error)")
             }
         }
     }
