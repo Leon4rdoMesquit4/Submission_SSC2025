@@ -64,7 +64,7 @@ extension Chapter3Part4View {
             )
             .overlay(alignment: .leading) {
                 ZStack {
-                    Image(ImageConstants.assist2)
+                    Image(ImageConstants.assist3)
                         .offset(x: assistIsOn ? 790 : 600, y: assistIsOn ? -150 : -30)
                         .animation(.easeOut(duration: DurationConstants.long).repeatForever(autoreverses: false), value: assistIsOn)
                         .opacity(assistIsOn && !isCompleted ? 1 : .zero)
