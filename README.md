@@ -2,8 +2,6 @@
 
 Welcome to my submission for the **Swift Student Challenge 2025**! This project is an interactive Swift Playground that showcases creativity, technical skills, and innovative use of Swift and SwiftUI.
 
----
-
 ## 📱 Project Overview
 
 **折り紙: A Tale of Folding Paper** The experience begins with a brief history of origami, allowing users to fold a traditional tsuru (crane). Then, it transitions to real-world applications, demonstrating how origami principles are used in medicine and space exploration.
@@ -20,4 +18,3 @@ Through simple gestures like dragging and swiping, users experience firsthand ho
 - **SwiftUI:** For building modern and responsive user interfaces.
 - **AVFoundation:** To add audio effects.
 
----
