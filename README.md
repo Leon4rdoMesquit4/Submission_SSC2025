@@ -1,4 +1,4 @@
-# 🚀 Swift Student Challenge 2025 - [Project Name]
+# 🚀 Swift Student Challenge 2025 - Submission
 
 Welcome to my submission for the **Swift Student Challenge 2025**! This project is an interactive Swift Playground that showcases creativity, technical skills, and innovative use of Swift and SwiftUI.
 
