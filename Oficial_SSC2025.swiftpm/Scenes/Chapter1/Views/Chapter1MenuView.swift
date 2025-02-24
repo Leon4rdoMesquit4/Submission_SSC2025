@@ -31,7 +31,7 @@ extension Chapter1MenuView {
             if isPainted {
                 Chapter1PaintedBackground(hasBorder: .constant(false))
             } else {
-                MenuGradientBackground()
+                MenuBackground()
             }
         }
     }

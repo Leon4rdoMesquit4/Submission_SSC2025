@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MenuGradientBackground: View {
+struct MenuBackground: View {
     var body: some View {
         LinearGradient(stops: [
             .init(

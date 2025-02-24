@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  Chapter2Part1View.swift
 //  Oficial_SSC2025
 //
 //  Created by Leonardo Mesquita Alves on 04/02/25.
@@ -69,7 +69,7 @@ extension Chapter2Part1View {
 
 extension Chapter2Part1View {
     var origamiTitle: String {
-        "Origami"
+        "Origamii"
     }
     var origamiSubtitle1: String {
         "is not just an ancient art."

@@ -56,6 +56,7 @@ extension Chapter1Part1View {
                 Text(origamiSubtitle1)
                     .font(FontsConstants.subtitle2)
                     .padding(.bottom, SpacingContants.small)
+                    .offset(x: 0, y: -5)
             }
             Text(origamiSubtitle2)
                 .font(FontsConstants.subtitle2)
