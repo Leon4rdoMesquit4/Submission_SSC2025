@@ -70,6 +70,5 @@ extension Chapter1Part5View {
 
 #Preview {
     Chapter1Part5View(action: {
-        print("Texted")
     })
 }

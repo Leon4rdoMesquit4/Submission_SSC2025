@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  CompletedView.swift
 //  Origami
 //
 //  Created by Leonardo Mesquita Alves on 05/02/25.
@@ -33,7 +33,7 @@ extension CompletedView {
         "Next Chapter"
     }
     var title: String {
-        "Completed"
+        chapterNumber == .three ? "The end!" : "Completed"
     }
     var subtitle: String {
         "Chapter \(chapterNumber.rawValue)/3"

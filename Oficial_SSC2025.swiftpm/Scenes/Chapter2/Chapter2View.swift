@@ -1,5 +1,5 @@
 //
-//  Chapter1View.swift
+//  Chapter2View.swift
 //  Origami
 //
 //  Created by Leonardo Mesquita Alves on 10/02/25.
@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Chapter2View: View {
-    @State var chpt: Chpt2viewChoose = .part1
+    @State var chpt: Chpt2SelectedPart = .part1
     @Binding var changeToNextChapter: Chapters
+    @EnvironmentObject var audioManager: AudioManager
     
     var body: some View {
         ZStack {
@@ -27,6 +28,8 @@ struct Chapter2View: View {
             case .completed:
                 completed
             }
+        }.onAppear {
+            audioManager.playSound(sound: .chapter2and3)
         }
     }
 }
@@ -66,12 +69,12 @@ extension Chapter2View {
         CompletedView(chapterNumber: .two) {
             Chapter2Background()
         } action: {
-            changeToNextChapter = .one
+            changeToNextChapter = .three
         }
     }
 }
 
-enum Chpt2viewChoose {
+enum Chpt2SelectedPart {
     case part1
     case part2
     case part3

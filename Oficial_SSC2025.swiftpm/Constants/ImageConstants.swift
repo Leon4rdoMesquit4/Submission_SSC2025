@@ -8,7 +8,6 @@
 enum ImageConstants {
     //Button Images
     static let playbutton = "PlayButton"
-    static let nextButton = "NextButton"
     static let restartButton = "RestartButton"
     
     //Chapter 1 images
@@ -23,11 +22,14 @@ enum ImageConstants {
     
     static let tsuru = "Tsuru"
     static let tsuruFolded = "Tsuru-folded"
+        
+    static let paper = "Paper"
     
-    static let arrow = "Arrow"
+    static let dirtyEffect = "Dirty-effect"
     
     static let assist = "Assist"
     static let assist2 = "Assist2"
+    static let assist3 = "Assist3"
     
     static let building = "Building"
     
@@ -42,6 +44,7 @@ enum ImageConstants {
     static let bloodFlow = "Blood-flow"
     
     static let cable = "Cable"
+    
     static let stentCompressed = "Stent-compressed"
     static let stentExpanded2 = "Stent-expanded2"
     static let stentExpanded3 = "Stent-expanded3"
@@ -49,7 +52,13 @@ enum ImageConstants {
     static let stentExpanded1 = "Stent-expanded1"
     static let stents = "Stents"
     
-    static let paper = "Paper"
+    static let sunshield = "Sunshield"
     
-    static let dirtyEffect = "Dirty-effect"
+    static let jamesWebb = "JamesWebb"
+    static let jamesWebbFolded = "JamesWebb-folded"
+    
+    static let tower = "Tower"
+    
+    static let orientationTipBackground = "OrientationTipBackground"
+    static let orientationTipImage = "OrientationTipImage"
 }

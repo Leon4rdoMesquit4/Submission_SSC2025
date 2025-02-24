@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Chapter1View: View {
-    @State var chpt: Chpt1viewChoose = .menu
+    @State var chpt: Chpt1SelectedPart = .menu
     @Binding var changeToNextChapter: Chapters
+    @EnvironmentObject var audioManager: AudioManager
     
     var body: some View {
         ZStack {
@@ -29,6 +30,8 @@ struct Chapter1View: View {
             case .completed:
                 completed
             }
+        }.onAppear {
+            audioManager.playSound(sound: .chapter1)
         }
     }
 }
@@ -79,7 +82,7 @@ extension Chapter1View {
     }
 }
 
-enum Chpt1viewChoose {
+enum Chpt1SelectedPart {
     case menu
     case part1
     case part2

@@ -47,6 +47,18 @@ struct VerticalWordStack: View {
     }
 }
 
+enum ButtonState {
+    case restart
+    case play
+    
+    var imageName: String {
+        switch self {
+        case .restart: return ImageConstants.restartButton
+        case .play: return ImageConstants.playbutton
+        }
+    }
+}
+
 #Preview {
-    CustomButton(state: .next, text: "Oi Safado")
+    CustomButton(state: .play, text: "Oi Safado")
 }

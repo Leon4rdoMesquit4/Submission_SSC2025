@@ -1,5 +1,5 @@
 //
-//  Chapter1PaintedBackground.swift
+//  Chapter2Background.swift
 //  Origami
 //
 //  Created by Leonardo Mesquita Alves on 10/02/25.

@@ -1,5 +1,5 @@
 //
-//  Chapter1Part1View 2.swift
+//  Chapter2Part4View.swift
 //  Origami
 //
 //  Created by Leonardo Mesquita Alves on 04/02/25.
@@ -67,7 +67,6 @@ extension Chapter2Part4View {
                                 assistIsOn = false
                                 if stentXOffset < 50 {
                                     stentXOffset = lastPosition + value.translation.width
-                                    print(stentXOffset)
                                 } else {
                                     stentXOffset = 50
                                     action?()
@@ -101,7 +100,7 @@ extension Chapter2Part4View {
     }
     
     var captionText2: String {
-        "Pinch outward to expand the stent and open the artery."
+        "Swipe to expand the stent and open the artery."
     }
     
 }

@@ -104,6 +104,5 @@ extension Chapter1Part4View {
 
 #Preview {
     Chapter1Part4View(action: {
-        print("Texted")
     })
 }
